@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :rustles do
+  resources :posts do
     collection do
       post :confirm
     end

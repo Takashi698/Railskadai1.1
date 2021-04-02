@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Railskadai1</title>
+    <title>Rails_kadai1</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,16 @@
   </head>
 
   <body>
-    <%= yield %>
+      <div class = "wrapper">
+        <header>
+          <%= image_tag "head.jpeg", class: "img_head" %>
+        </header>
+        <div class = "main_body">
+          <%= yield %>
+        </div>
+        <footer>
+        <%= image_tag "foot.jpeg", class: "img_foot" %>
+        </footer>
+      </div>     
   </body>
 </html>

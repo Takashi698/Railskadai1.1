@@ -1,0 +1,7 @@
+<h3>Are you sure to post it?</h3>
+<%= form_with(model: @post, url: posts_path, local: true) do |form| %>
+    <%=form.hidden_field :content%>
+    <p>text:<%= @post.content%></p>
+    <%= form.submit "post"%>
+    <%= form.submit "back", name: "back"%>
+<% end %>

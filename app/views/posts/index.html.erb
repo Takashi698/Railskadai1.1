@@ -1,2 +1,26 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<%=link_to(new_post_path) do %>
+    <button class="btn btn-secondary btn-lg" >new</button>
+ <%end%>
+<h2>Octopus Record</h2>
+<% @posts.each do |post|%>
+    <div class="octopus_post">
+        <div class="octopus_icon">
+            <img src = "assets/octopus.png">
+        </div>       
+        <div class = "rustling">
+            <div class = "comments">
+                <p><%= post.content %></p>
+            </div>
+        </div>
+    </div>  
+    <%=link_to(edit_post_path(post.id), data: {confirm:'You want to edit your post?'}) do %>
+        <button class="btn btn-secondary btn-lg" >edit</button>
+    <%end%>  
+    <%=link_to(post_path(post.id), method: :delete, data: {confirm:'Are you sure to delete your post?'}) do %>
+        <button class="btn btn-secondary btn-lg" >delete</button>
+    <%end%>
+<% end%>
+<%#<%= link_to 'new', new_post_path%>
+
+    
+    
